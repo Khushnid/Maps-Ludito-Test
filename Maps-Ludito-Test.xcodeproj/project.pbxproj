@@ -13,7 +13,13 @@
 		E296E6222DC6808500B6E364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6142DC6808500B6E364 /* AppDelegate.swift */; };
 		E296E6232DC6808500B6E364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E61B2DC6808500B6E364 /* SceneDelegate.swift */; };
 		E296E6242DC6808500B6E364 /* LuditoCustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */; };
-		E296E62D2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E62C2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift */; };
+		E296E62D2DC6831F00B6E364 /* LuditoCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E62C2DC6831F00B6E364 /* LuditoCustomTabBar.swift */; };
+		E296E6302DC68F6700B6E364 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */; };
+		E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */; };
+		E296E6342DC68FB400B6E364 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6332DC68FB400B6E364 /* UserDetailsViewController.swift */; };
+		E296E6362DC691FF00B6E364 /* LuditoTabBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */; };
+		E296E63A2DC6998D00B6E364 /* Roboto-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E296E6392DC6998D00B6E364 /* Roboto-SemiBold.ttf */; };
+		E296E63B2DC6998D00B6E364 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E296E6382DC6998D00B6E364 /* Roboto-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +31,13 @@
 		E296E6192DC6808500B6E364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E296E61B2DC6808500B6E364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoCustomTabBarController.swift; sourceTree = "<group>"; };
-		E296E62C2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoCustomTabBarDelegate.swift; sourceTree = "<group>"; };
+		E296E62C2DC6831F00B6E364 /* LuditoCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoCustomTabBar.swift; sourceTree = "<group>"; };
+		E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapsViewController.swift; sourceTree = "<group>"; };
+		E296E6332DC68FB400B6E364 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoTabBarTitleView.swift; sourceTree = "<group>"; };
+		E296E6382DC6998D00B6E364 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		E296E6392DC6998D00B6E364 /* Roboto-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */,
+				E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */,
+				E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */,
+				E296E6332DC68FB400B6E364 /* UserDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -95,27 +110,38 @@
 		E296E6272DC6817A00B6E364 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E296E6282DC6818300B6E364 /* Assets */,
+				E296E6282DC6818300B6E364 /* Resources */,
 				E296E61B2DC6808500B6E364 /* SceneDelegate.swift */,
 				E296E6142DC6808500B6E364 /* AppDelegate.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		E296E6282DC6818300B6E364 /* Assets */ = {
+		E296E6282DC6818300B6E364 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E296E6372DC6997000B6E364 /* Fonts */,
 				E296E6152DC6808500B6E364 /* Assets.xcassets */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E296E6292DC6830400B6E364 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E296E62C2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift */,
+				E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */,
+				E296E62C2DC6831F00B6E364 /* LuditoCustomTabBar.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E296E6372DC6997000B6E364 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E296E6382DC6998D00B6E364 /* Roboto-Bold.ttf */,
+				E296E6392DC6998D00B6E364 /* Roboto-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +207,8 @@
 			files = (
 				E296E61E2DC6808500B6E364 /* Assets.xcassets in Resources */,
 				E296E6202DC6808500B6E364 /* LaunchScreen.storyboard in Resources */,
+				E296E63A2DC6998D00B6E364 /* Roboto-SemiBold.ttf in Resources */,
+				E296E63B2DC6998D00B6E364 /* Roboto-Bold.ttf in Resources */,
 				E296E6212DC6808500B6E364 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,9 +221,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E296E6222DC6808500B6E364 /* AppDelegate.swift in Sources */,
+				E296E6362DC691FF00B6E364 /* LuditoTabBarTitleView.swift in Sources */,
 				E296E6232DC6808500B6E364 /* SceneDelegate.swift in Sources */,
-				E296E62D2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift in Sources */,
+				E296E62D2DC6831F00B6E364 /* LuditoCustomTabBar.swift in Sources */,
 				E296E6242DC6808500B6E364 /* LuditoCustomTabBarController.swift in Sources */,
+				E296E6342DC68FB400B6E364 /* UserDetailsViewController.swift in Sources */,
+				E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */,
+				E296E6302DC68F6700B6E364 /* BookmarkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

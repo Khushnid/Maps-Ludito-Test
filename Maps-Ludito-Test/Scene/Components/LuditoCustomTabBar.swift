@@ -64,9 +64,9 @@ private extension LuditoCustomTabBar {
             button.setImage(UIImage(named: icon), for: .normal)
             button.tintColor = .gray
             button.tag = index
-            
             button.addTarget(self, action: #selector(tabTapped(_:)), for: .touchUpInside)
             button.imageView?.contentMode = .scaleAspectFit
+            button.imageEdgeInsets = UIEdgeInsets(top: -8, left: 0, bottom: 8, right: 0)
 
             let container = UIView()
             container.addSubview(button)
@@ -77,17 +77,6 @@ private extension LuditoCustomTabBar {
                 button.topAnchor.constraint(equalTo: container.topAnchor),
                 button.bottomAnchor.constraint(equalTo: container.bottomAnchor)
             ])
-            
-            if let imageView = button.imageView {
-                imageView.translatesAutoresizingMaskIntoConstraints = false
-              
-                NSLayoutConstraint.activate([
-                    imageView.heightAnchor.constraint(equalToConstant: 32),
-                    imageView.widthAnchor.constraint(equalToConstant: 32),
-                    imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
-                    imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor, constant: -8)
-                ])
-            }
 
             stackView.addArrangedSubview(container)
             buttons.append(button)
