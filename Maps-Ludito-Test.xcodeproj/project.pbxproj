@@ -6,30 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E296E61E2DC6808500B6E364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E296E6152DC6808500B6E364 /* Assets.xcassets */; };
+		E296E6202DC6808500B6E364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E296E6182DC6808500B6E364 /* LaunchScreen.storyboard */; };
+		E296E6212DC6808500B6E364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E296E61A2DC6808500B6E364 /* Main.storyboard */; };
+		E296E6222DC6808500B6E364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6142DC6808500B6E364 /* AppDelegate.swift */; };
+		E296E6232DC6808500B6E364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E61B2DC6808500B6E364 /* SceneDelegate.swift */; };
+		E296E6242DC6808500B6E364 /* LuditoCustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */; };
+		E296E62D2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E62C2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E296E5FA2DC677AE00B6E364 /* Maps-Ludito-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maps-Ludito-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E296E6142DC6808500B6E364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E296E6152DC6808500B6E364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E296E6162DC6808500B6E364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E296E6172DC6808500B6E364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E296E6192DC6808500B6E364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E296E61B2DC6808500B6E364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoCustomTabBarController.swift; sourceTree = "<group>"; };
+		E296E62C2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoCustomTabBarDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E296E60C2DC677B000B6E364 /* Exceptions for "Maps-Ludito-Test" folder in "Maps-Ludito-Test" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = E296E5F92DC677AE00B6E364 /* Maps-Ludito-Test */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E296E5FC2DC677AE00B6E364 /* Maps-Ludito-Test */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				E296E60C2DC677B000B6E364 /* Exceptions for "Maps-Ludito-Test" folder in "Maps-Ludito-Test" target */,
-			);
-			path = "Maps-Ludito-Test";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E296E5F72DC677AE00B6E364 /* Frameworks */ = {
@@ -45,7 +42,7 @@
 		E296E5F12DC677AE00B6E364 = {
 			isa = PBXGroup;
 			children = (
-				E296E5FC2DC677AE00B6E364 /* Maps-Ludito-Test */,
+				E296E61D2DC6808500B6E364 /* Maps-Ludito-Test */,
 				E296E5FB2DC677AE00B6E364 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +53,69 @@
 				E296E5FA2DC677AE00B6E364 /* Maps-Ludito-Test.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E296E6132DC6808500B6E364 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				E296E6262DC6816600B6E364 /* Storyboards */,
+				E296E6252DC6808D00B6E364 /* Controllers */,
+				E296E6292DC6830400B6E364 /* Components */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		E296E61D2DC6808500B6E364 /* Maps-Ludito-Test */ = {
+			isa = PBXGroup;
+			children = (
+				E296E6272DC6817A00B6E364 /* Main */,
+				E296E6132DC6808500B6E364 /* Scene */,
+				E296E6162DC6808500B6E364 /* Info.plist */,
+			);
+			path = "Maps-Ludito-Test";
+			sourceTree = "<group>";
+		};
+		E296E6252DC6808D00B6E364 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E296E6262DC6816600B6E364 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E296E6182DC6808500B6E364 /* LaunchScreen.storyboard */,
+				E296E61A2DC6808500B6E364 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E296E6272DC6817A00B6E364 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E296E6282DC6818300B6E364 /* Assets */,
+				E296E61B2DC6808500B6E364 /* SceneDelegate.swift */,
+				E296E6142DC6808500B6E364 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E296E6282DC6818300B6E364 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E296E6152DC6808500B6E364 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E296E6292DC6830400B6E364 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E296E62C2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +132,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				E296E5FC2DC677AE00B6E364 /* Maps-Ludito-Test */,
 			);
 			name = "Maps-Ludito-Test";
 			packageProductDependencies = (
@@ -122,6 +179,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E296E61E2DC6808500B6E364 /* Assets.xcassets in Resources */,
+				E296E6202DC6808500B6E364 /* LaunchScreen.storyboard in Resources */,
+				E296E6212DC6808500B6E364 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +192,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E296E6222DC6808500B6E364 /* AppDelegate.swift in Sources */,
+				E296E6232DC6808500B6E364 /* SceneDelegate.swift in Sources */,
+				E296E62D2DC6831F00B6E364 /* LuditoCustomTabBarDelegate.swift in Sources */,
+				E296E6242DC6808500B6E364 /* LuditoCustomTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E296E6182DC6808500B6E364 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E296E6172DC6808500B6E364 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E296E61A2DC6808500B6E364 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E296E6192DC6808500B6E364 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E296E60E2DC677B000B6E364 /* Debug */ = {
@@ -153,6 +236,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -181,6 +265,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
