@@ -6,6 +6,6 @@ target 'Maps-Ludito-Test' do
   use_frameworks!
 
   # Pods for Maps-Ludito-Test
-  pod 'YandexMapsMobile', '4.14.0-lite'
+  pod 'YandexMapsMobile', '4.14.0-full'
 
 end

@@ -44,5 +44,4 @@ final class LuditoTabBarTitleView: UIView {
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
         ])
     }
-
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B67ADB4C2DC8B7AC002AED83 /* LuditoSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */; };
+		B67ADB4E2DC8BF9F002AED83 /* LuditoFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */; };
+		B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */; };
+		B67ADB532DC8CE95002AED83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB522DC8CE95002AED83 /* Constants.swift */; };
+		B67ADB592DC8E5B5002AED83 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB582DC8E5B5002AED83 /* UIViewController+Extensions.swift */; };
+		B67ADB5D2DC8EA31002AED83 /* BottomSheetSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB5C2DC8EA31002AED83 /* BottomSheetSearchViewController.swift */; };
 		E296E61E2DC6808500B6E364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E296E6152DC6808500B6E364 /* Assets.xcassets */; };
 		E296E6202DC6808500B6E364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E296E6182DC6808500B6E364 /* LaunchScreen.storyboard */; };
 		E296E6212DC6808500B6E364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E296E61A2DC6808500B6E364 /* Main.storyboard */; };
@@ -25,6 +31,12 @@
 
 /* Begin PBXFileReference section */
 		9F067CDC07E8D70E40AEB9AA /* Pods-Maps-Ludito-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps-Ludito-Test.release.xcconfig"; path = "Target Support Files/Pods-Maps-Ludito-Test/Pods-Maps-Ludito-Test.release.xcconfig"; sourceTree = "<group>"; };
+		B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoSearchBar.swift; sourceTree = "<group>"; };
+		B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoFloatingButton.swift; sourceTree = "<group>"; };
+		B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapsView.swift; sourceTree = "<group>"; };
+		B67ADB522DC8CE95002AED83 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B67ADB582DC8E5B5002AED83 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B67ADB5C2DC8EA31002AED83 /* BottomSheetSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSearchViewController.swift; sourceTree = "<group>"; };
 		D8C42FAFC18856FAE523AC28 /* Pods_Maps_Ludito_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps_Ludito_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E296E5FA2DC677AE00B6E364 /* Maps-Ludito-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maps-Ludito-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E296E6142DC6808500B6E364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +85,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B67ADB462DC8B5F6002AED83 /* YandexMaps */ = {
+			isa = PBXGroup;
+			children = (
+				B67ADB5A2DC8E95F002AED83 /* Root */,
+				B67ADB5B2DC8E973002AED83 /* Location Sheet */,
+			);
+			path = YandexMaps;
+			sourceTree = "<group>";
+		};
+		B67ADB512DC8CE89002AED83 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B67ADB522DC8CE95002AED83 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B67ADB572DC8E5A6002AED83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B67ADB582DC8E5B5002AED83 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B67ADB5A2DC8E95F002AED83 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */,
+				B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		B67ADB5B2DC8E973002AED83 /* Location Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				B67ADB5C2DC8EA31002AED83 /* BottomSheetSearchViewController.swift */,
+			);
+			path = "Location Sheet";
+			sourceTree = "<group>";
+		};
 		E296E5F12DC677AE00B6E364 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +151,7 @@
 				E296E6262DC6816600B6E364 /* Storyboards */,
 				E296E6252DC6808D00B6E364 /* Controllers */,
 				E296E6292DC6830400B6E364 /* Components */,
+				B67ADB572DC8E5A6002AED83 /* Extensions */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -114,9 +169,9 @@
 		E296E6252DC6808D00B6E364 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B67ADB462DC8B5F6002AED83 /* YandexMaps */,
 				E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */,
 				E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */,
-				E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */,
 				E296E6332DC68FB400B6E364 /* UserDetailsViewController.swift */,
 			);
 			path = Controllers;
@@ -144,6 +199,7 @@
 		E296E6282DC6818300B6E364 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B67ADB512DC8CE89002AED83 /* Constants */,
 				E296E6372DC6997000B6E364 /* Fonts */,
 				E296E6152DC6808500B6E364 /* Assets.xcassets */,
 			);
@@ -154,7 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */,
+				B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */,
 				E296E62C2DC6831F00B6E364 /* LuditoCustomTabBar.swift */,
+				B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -291,9 +349,15 @@
 				E296E6232DC6808500B6E364 /* SceneDelegate.swift in Sources */,
 				E296E62D2DC6831F00B6E364 /* LuditoCustomTabBar.swift in Sources */,
 				E296E6242DC6808500B6E364 /* LuditoCustomTabBarController.swift in Sources */,
+				B67ADB4C2DC8B7AC002AED83 /* LuditoSearchBar.swift in Sources */,
+				B67ADB4E2DC8BF9F002AED83 /* LuditoFloatingButton.swift in Sources */,
 				E296E6342DC68FB400B6E364 /* UserDetailsViewController.swift in Sources */,
+				B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */,
+				B67ADB592DC8E5B5002AED83 /* UIViewController+Extensions.swift in Sources */,
 				E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */,
+				B67ADB5D2DC8EA31002AED83 /* BottomSheetSearchViewController.swift in Sources */,
 				E296E6302DC68F6700B6E364 /* BookmarkViewController.swift in Sources */,
+				B67ADB532DC8CE95002AED83 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
