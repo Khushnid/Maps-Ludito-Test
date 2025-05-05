@@ -20,9 +20,12 @@
 		E296E6362DC691FF00B6E364 /* LuditoTabBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */; };
 		E296E63A2DC6998D00B6E364 /* Roboto-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E296E6392DC6998D00B6E364 /* Roboto-SemiBold.ttf */; };
 		E296E63B2DC6998D00B6E364 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E296E6382DC6998D00B6E364 /* Roboto-Bold.ttf */; };
+		ED4405CA3C25BA5D12DCE809 /* Pods_Maps_Ludito_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C42FAFC18856FAE523AC28 /* Pods_Maps_Ludito_Test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F067CDC07E8D70E40AEB9AA /* Pods-Maps-Ludito-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps-Ludito-Test.release.xcconfig"; path = "Target Support Files/Pods-Maps-Ludito-Test/Pods-Maps-Ludito-Test.release.xcconfig"; sourceTree = "<group>"; };
+		D8C42FAFC18856FAE523AC28 /* Pods_Maps_Ludito_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps_Ludito_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E296E5FA2DC677AE00B6E364 /* Maps-Ludito-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maps-Ludito-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E296E6142DC6808500B6E364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E296E6152DC6808500B6E364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoTabBarTitleView.swift; sourceTree = "<group>"; };
 		E296E6382DC6998D00B6E364 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		E296E6392DC6998D00B6E364 /* Roboto-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-SemiBold.ttf"; sourceTree = "<group>"; };
+		F67777D2A8768006722B9564 /* Pods-Maps-Ludito-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps-Ludito-Test.debug.xcconfig"; path = "Target Support Files/Pods-Maps-Ludito-Test/Pods-Maps-Ludito-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4405CA3C25BA5D12DCE809 /* Pods_Maps_Ludito_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		511948771901AAE034F1D8F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F67777D2A8768006722B9564 /* Pods-Maps-Ludito-Test.debug.xcconfig */,
+				9F067CDC07E8D70E40AEB9AA /* Pods-Maps-Ludito-Test.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A7DA3F29BC4B517B8C0735F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8C42FAFC18856FAE523AC28 /* Pods_Maps_Ludito_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E296E5F12DC677AE00B6E364 = {
 			isa = PBXGroup;
 			children = (
 				E296E61D2DC6808500B6E364 /* Maps-Ludito-Test */,
 				E296E5FB2DC677AE00B6E364 /* Products */,
+				511948771901AAE034F1D8F0 /* Pods */,
+				A7DA3F29BC4B517B8C0735F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,17 +176,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E296E60D2DC677B000B6E364 /* Build configuration list for PBXNativeTarget "Maps-Ludito-Test" */;
 			buildPhases = (
+				602F4EA803916BADA512FC72 /* [CP] Check Pods Manifest.lock */,
 				E296E5F62DC677AE00B6E364 /* Sources */,
 				E296E5F72DC677AE00B6E364 /* Frameworks */,
 				E296E5F82DC677AE00B6E364 /* Resources */,
+				FE263D3DF2AC35C82921033A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Maps-Ludito-Test";
-			packageProductDependencies = (
-			);
 			productName = "Maps-Ludito-Test";
 			productReference = E296E5FA2DC677AE00B6E364 /* Maps-Ludito-Test.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +240,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		602F4EA803916BADA512FC72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Maps-Ludito-Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE263D3DF2AC35C82921033A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maps-Ludito-Test/Pods-Maps-Ludito-Test-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maps-Ludito-Test/Pods-Maps-Ludito-Test-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maps-Ludito-Test/Pods-Maps-Ludito-Test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E296E5F62DC677AE00B6E364 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -255,6 +322,7 @@
 /* Begin XCBuildConfiguration section */
 		E296E60E2DC677B000B6E364 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F67777D2A8768006722B9564 /* Pods-Maps-Ludito-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -284,6 +352,7 @@
 		};
 		E296E60F2DC677B000B6E364 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F067CDC07E8D70E40AEB9AA /* Pods-Maps-Ludito-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
