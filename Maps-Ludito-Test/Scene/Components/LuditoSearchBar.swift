@@ -51,14 +51,22 @@ class LuditoSearchBar: UIView, UITextFieldDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupSearchResult(text: String) {
+        textField.text = text
+    }
+    
+    func getSearchResult() -> String {
+        return textField.text ?? ""
+    }
 }
 
 private extension LuditoSearchBar {
     func setupView() {
         backgroundColor = UIColor(named: "background_search_field")
-        layer.borderColor = UIColor(named: "border_search")?.cgColor
+        layer.borderColor = UIColor.white.cgColor
         layer.cornerRadius = 16
-        layer.borderWidth = 4
+        layer.borderWidth = 5
         clipsToBounds = true
 
         addSubview(iconImageView)
@@ -87,7 +95,7 @@ private extension LuditoSearchBar {
         debounceTimer?.invalidate()
         
         debounceTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] _ in
-            guard let self, let text = sender.text else { return }
+            guard let self, let text = sender.text, text.count >= 3 else { return }
             delegate?.searchBarView(text: text)
         }
     }

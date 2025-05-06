@@ -13,6 +13,7 @@ final class BottomSheetSearchViewController: UIViewController {
     private let searchbar: LuditoSearchBar = {
         let view = LuditoSearchBar()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = false
         return view
     }()
     
@@ -28,15 +29,18 @@ final class BottomSheetSearchViewController: UIViewController {
     
     private var results: [YMKGeoObjectCollectionItem]
     private let userLocation: YMKPoint
+    private let searchResult: String
     var onPlaceSelected: ((YMKGeoObjectCollectionItem) -> Void)
     
     init(
         results: [YMKGeoObjectCollectionItem],
+        searchResult: String,
         userLocation: YMKPoint,
         onPlaceSelected: @escaping ((YMKGeoObjectCollectionItem) -> Void)
     ) {
         self.results = results
         self.userLocation = userLocation
+        self.searchResult = searchResult
         self.onPlaceSelected = onPlaceSelected
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,6 +56,7 @@ final class BottomSheetSearchViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
+        searchbar.setupSearchResult(text: searchResult)
 
         let stack = UIStackView(arrangedSubviews: [searchbar, tableView])
         stack.translatesAutoresizingMaskIntoConstraints = false

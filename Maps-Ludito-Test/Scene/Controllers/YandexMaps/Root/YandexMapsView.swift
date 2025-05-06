@@ -27,6 +27,14 @@ final class YandexMapsView: UIView {
         return view
     }()
     
+    let pinImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "ic_map_pin")
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    
     private let localCameraPosition = YMKCameraPosition(
         target: YMKPoint(latitude: 41.2995, longitude: 69.2401),
         zoom: 12,
@@ -52,6 +60,10 @@ final class YandexMapsView: UIView {
     func setupFloatingButtonDelegate(delegate: LuditoFloatingButtonDelegate) {
         floatingButton.delegate = delegate
     }
+    
+    func getSearchResult() -> String {
+        return searchbar.getSearchResult()
+    }
 }
 
 private extension YandexMapsView {
@@ -59,7 +71,15 @@ private extension YandexMapsView {
         guard let mapView else { return }
         
         addSubview(mapView)
+        mapView.addSubview(pinImageView)
         mapView.mapWindow.map.move(with: localCameraPosition)
+        
+        NSLayoutConstraint.activate([
+            pinImageView.centerXAnchor.constraint(equalTo: mapView.centerXAnchor),
+            pinImageView.centerYAnchor.constraint(equalTo: mapView.centerYAnchor, constant: -36),
+            pinImageView.widthAnchor.constraint(equalToConstant: 72),
+            pinImageView.heightAnchor.constraint(equalToConstant: 72),
+        ])
     }
     
     func setupView() {

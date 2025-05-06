@@ -9,12 +9,18 @@ import UIKit
 import YandexMapsMobile
 import CoreLocation
 
-final class YandexMapsViewController: UIViewController {
+final class YandexMapsViewController: UIViewController, YMKMapCameraListener {
     private let rootView = YandexMapsView()
     private let locationManager = CLLocationManager()
     private var userLocation: CLLocation?
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
+    
+    private lazy var homeSearchDelegateHandler: LuditoSearchBarDelegateHandler = {
+        return LuditoSearchBarDelegateHandler { [weak self] text in
+            self?.performSearch(with: text)
+        }
+    }()
     
     override func loadView() {
         view = rootView
@@ -27,28 +33,42 @@ final class YandexMapsViewController: UIViewController {
         requestLocationPermission()
     }
     
-    private func setupViewController() {
+    func onCameraPositionChanged(
+        with map: YMKMap,
+        cameraPosition: YMKCameraPosition,
+        cameraUpdateReason: YMKCameraUpdateReason,
+        finished: Bool
+    ) {
+        if finished {
+            UIView.animate(withDuration: 0.2) {
+                self.rootView.pinImageView.transform = .identity
+            }
+        } else {
+            UIView.animate(withDuration: 0.2) {
+                self.rootView.pinImageView.transform = CGAffineTransform(translationX: 0, y: -20)
+            }
+        }
+    }
+}
+
+private extension YandexMapsViewController {
+    func setupViewController() {
         rootView.setupSearchDelegate(delegate: homeSearchDelegateHandler)
         rootView.setupFloatingButtonDelegate(delegate: self)
+        rootView.mapView?.mapWindow.map.addCameraListener(with: self)
     }
     
-    private lazy var homeSearchDelegateHandler: LuditoSearchBarDelegateHandler = {
-        return LuditoSearchBarDelegateHandler { [weak self] text in
-            self?.performSearch(with: text)
-        }
-    }()
-    
-    private func setupSearch() {
+    func setupSearch() {
         searchManager = YMKSearchFactory.instance().createSearchManager(with: YMKSearchManagerType.combined)
     }
     
-    private func requestLocationPermission() {
+    func requestLocationPermission() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
     
-    private func performSearch(with query: String) {
+    func performSearch(with query: String) {
         guard let userLocation else { return }
         
         let yandexPoint = YMKPoint(
@@ -66,7 +86,7 @@ final class YandexMapsViewController: UIViewController {
         )
     }
     
-    private func handleSearchResponse(_ response: YMKSearchResponse?, error: Error?) {
+    func handleSearchResponse(_ response: YMKSearchResponse?, error: Error?) {
         if let error {
             showErrorAlert(message: error.localizedDescription)
             return
@@ -80,7 +100,7 @@ final class YandexMapsViewController: UIViewController {
         presentSearchSheet(results: response.collection.children)
     }
     
-    private func updateMapWithUserLocation() {
+    func updateMapWithUserLocation() {
         guard let userLocation else { return }
         
         let target = YMKPoint(
@@ -95,7 +115,7 @@ final class YandexMapsViewController: UIViewController {
         )
     }
     
-    private func moveToLocation(latitude: Double, longitude: Double, zoom: Float = 14.0) {
+    func moveToLocation(latitude: Double, longitude: Double, zoom: Float = 14.0) {
         let point = YMKPoint(latitude: latitude, longitude: longitude)
         
         rootView.mapView?.mapWindow.map.move(
@@ -113,7 +133,11 @@ final class YandexMapsViewController: UIViewController {
             longitude: userLocation.coordinate.longitude
         )
         
-        let vc = BottomSheetSearchViewController(results: results, userLocation: userPoint) { [weak self] place in
+        let vc = BottomSheetSearchViewController(
+            results: results,
+            searchResult: rootView.getSearchResult(),
+            userLocation: userPoint
+        ) { [weak self] place in
             guard let self, let geometry = place.obj?.geometry.first?.point else { return }
             
             moveToLocation(latitude: geometry.latitude, longitude: geometry.longitude)
