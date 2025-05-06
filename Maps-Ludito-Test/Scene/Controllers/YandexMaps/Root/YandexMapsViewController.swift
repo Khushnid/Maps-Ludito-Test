@@ -106,7 +106,14 @@ final class YandexMapsViewController: UIViewController {
     }
     
     func presentSearchSheet(results: [YMKGeoObjectCollectionItem]) {
-        let vc = BottomSheetSearchViewController(results: results) { [weak self] place in
+        guard let userLocation else { return }
+        
+        let userPoint = YMKPoint(
+            latitude: userLocation.coordinate.latitude,
+            longitude: userLocation.coordinate.longitude
+        )
+        
+        let vc = BottomSheetSearchViewController(results: results, userLocation: userPoint) { [weak self] place in
             guard let self, let geometry = place.obj?.geometry.first?.point else { return }
             
             moveToLocation(latitude: geometry.latitude, longitude: geometry.longitude)
