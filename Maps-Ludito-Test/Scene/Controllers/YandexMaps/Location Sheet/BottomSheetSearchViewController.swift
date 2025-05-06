@@ -6,14 +6,39 @@
 //
 
 import UIKit
+import YandexMapsMobile
 
 final class BottomSheetSearchViewController: UIViewController {
-    private let searchView = LuditoSearchBar()
-    private let tableView = UITableView()
-    private var results: [String] = [] // replace with model
-
-    var onPlaceSelected: ((String) -> Void)?
-
+    private let searchbar: LuditoSearchBar = {
+        let view = LuditoSearchBar()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private let tableView: UITableView = {
+        let view = UITableView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.showsVerticalScrollIndicator = false
+        view.separatorStyle = .singleLine
+        return view
+    }()
+    
+    private var results: [YMKGeoObjectCollectionItem]
+    var onPlaceSelected: ((YMKGeoObjectCollectionItem) -> Void)
+    
+    init(
+        results: [YMKGeoObjectCollectionItem],
+        onPlaceSelected: @escaping ((YMKGeoObjectCollectionItem) -> Void)
+    ) {
+        self.results = results
+        self.onPlaceSelected = onPlaceSelected
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -29,14 +54,14 @@ final class BottomSheetSearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
-        let stack = UIStackView(arrangedSubviews: [searchView, tableView])
+        let stack = UIStackView(arrangedSubviews: [searchbar, tableView])
         stack.axis = .vertical
         stack.spacing = 8
         stack.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(stack)
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
             stack.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -45,7 +70,7 @@ final class BottomSheetSearchViewController: UIViewController {
 
     private func performSearch(query: String) {
         // Mock results
-        results = Array(repeating: "Le Grande Plaza Hotel", count: 4)
+//        results = Array(repeating: "Le Grande Plaza Hotel", count: 4)
         tableView.reloadData()
     }
 }
@@ -56,7 +81,7 @@ extension BottomSheetSearchViewController: UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var config = cell.defaultContentConfiguration()
-        config.text = results[indexPath.row]
+        config.text = results[indexPath.row].description
         config.secondaryText = "Ташкент, ул. Узбекистон Овози, 2"
         config.image = UIImage(systemName: "mappin.circle")
         config.secondaryTextProperties.color = .gray
@@ -65,7 +90,7 @@ extension BottomSheetSearchViewController: UITableViewDataSource, UITableViewDel
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onPlaceSelected?(results[indexPath.row])
+        onPlaceSelected(results[indexPath.row])
         dismiss(animated: true)
     }
 }

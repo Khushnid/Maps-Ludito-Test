@@ -56,7 +56,7 @@ class LuditoSearchBar: UIView, UITextFieldDelegate {
 private extension LuditoSearchBar {
     func setupView() {
         backgroundColor = UIColor(named: "background_search_field")
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderColor = UIColor(named: "border_search")?.cgColor
         layer.cornerRadius = 16
         layer.borderWidth = 4
         clipsToBounds = true

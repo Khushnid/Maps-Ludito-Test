@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60117BC2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117BB2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift */; };
 		B67ADB4C2DC8B7AC002AED83 /* LuditoSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */; };
 		B67ADB4E2DC8BF9F002AED83 /* LuditoFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */; };
 		B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		9F067CDC07E8D70E40AEB9AA /* Pods-Maps-Ludito-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps-Ludito-Test.release.xcconfig"; path = "Target Support Files/Pods-Maps-Ludito-Test/Pods-Maps-Ludito-Test.release.xcconfig"; sourceTree = "<group>"; };
+		B60117BB2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YandexMapsViewController+SearchDelegate.swift"; sourceTree = "<group>"; };
 		B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoSearchBar.swift; sourceTree = "<group>"; };
 		B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoFloatingButton.swift; sourceTree = "<group>"; };
 		B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapsView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */,
+				B60117BB2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift */,
 				B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */,
 			);
 			path = Root;
@@ -357,6 +360,7 @@
 				E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */,
 				B67ADB5D2DC8EA31002AED83 /* BottomSheetSearchViewController.swift in Sources */,
 				E296E6302DC68F6700B6E364 /* BookmarkViewController.swift in Sources */,
+				B60117BC2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift in Sources */,
 				B67ADB532DC8CE95002AED83 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

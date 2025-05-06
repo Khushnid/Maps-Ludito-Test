@@ -25,14 +25,18 @@ final class YandexMapsViewController: UIViewController {
         setupViewController()
         setupSearch()
         requestLocationPermission()
-        
-        presentSearchSheet()
     }
     
     private func setupViewController() {
-        rootView.setupSearchDelegate(delegate: self)
+        rootView.setupSearchDelegate(delegate: homeSearchDelegateHandler)
         rootView.setupFloatingButtonDelegate(delegate: self)
     }
+    
+    private lazy var homeSearchDelegateHandler: LuditoSearchBarDelegateHandler = {
+        return LuditoSearchBarDelegateHandler { [weak self] text in
+            self?.performSearch(with: text)
+        }
+    }()
     
     private func setupSearch() {
         searchManager = YMKSearchFactory.instance().createSearchManager(with: YMKSearchManagerType.combined)
@@ -68,14 +72,12 @@ final class YandexMapsViewController: UIViewController {
             return
         }
         
-        guard let response = response,
-              let firstResult = response.collection.children.first,
-              let geometry = firstResult.obj?.geometry.first?.point else {
+        guard let response else {
             debugPrint("No search results found.")
             return
         }
         
-        moveToLocation(latitude: geometry.latitude, longitude: geometry.longitude)
+        presentSearchSheet(results: response.collection.children)
     }
     
     private func updateMapWithUserLocation() {
@@ -103,11 +105,12 @@ final class YandexMapsViewController: UIViewController {
         )
     }
     
-    func presentSearchSheet() {
-        let vc = BottomSheetSearchViewController()
-        vc.onPlaceSelected = { place in
-            print("Selected: \(place)")
-            // Move to location on map or show details
+    func presentSearchSheet(results: [YMKGeoObjectCollectionItem]) {
+        let vc = BottomSheetSearchViewController(results: results) { [weak self] place in
+            guard let self, let geometry = place.obj?.geometry.first?.point else { return }
+            
+            moveToLocation(latitude: geometry.latitude, longitude: geometry.longitude)
+            dismiss(animated: true)
         }
 
         if let sheet = vc.sheetPresentationController {
@@ -116,13 +119,6 @@ final class YandexMapsViewController: UIViewController {
         }
 
         present(vc, animated: true)
-    }
-
-}
-
-extension YandexMapsViewController: LuditoSearchBarDelegate {
-    func searchBarView(text: String) {
-        performSearch(with: text)
     }
 }
 
