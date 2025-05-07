@@ -56,7 +56,13 @@ final class YandexMapsViewController: UIViewController, YMKMapCameraListener, YM
     
     func onMapTap(with map: YMKMap, point: YMKPoint) {
         guard let searchManager = searchManager else {
-            showPlaceInfo(title: "Search Manager not initialized", subtitle: "", rating: 0, reviewCount: 0)
+            showPlaceInfo(
+                title: "Search Manager not initialized",
+                subtitle: "",
+                rating: 0,
+                reviewCount: 0,
+                point: point
+            )
             return
         }
       
@@ -68,20 +74,18 @@ final class YandexMapsViewController: UIViewController, YMKMapCameraListener, YM
                 guard let self else { return }
                 
                 if let error {
-                    self.showPlaceInfo(title: "Error", subtitle: error.localizedDescription, rating: 0.0, reviewCount: 0)
+                    showErrorAlert(message: error.localizedDescription)
                     return
                 }
                 
-                guard let response, let firstResult = response.collection.children.first else {
-                    self.showPlaceInfo(title: "No results found", subtitle: "No description available", rating: 0.0, reviewCount: 0)
-                    return
-                }
+                guard let response, let firstResult = response.collection.children.first else { return }
                 
                 self.showPlaceInfo(
                     title: firstResult.title,
                     subtitle: firstResult.subtitle,
                     rating: 4.5,
-                    reviewCount: 123
+                    reviewCount: 123,
+                    point: point
                 )
             }
         )
@@ -206,14 +210,20 @@ private extension YandexMapsViewController {
         present(vc, animated: true)
     }
     
-    func showPlaceInfo(title: String, subtitle: String, rating: Double, reviewCount: Int) {
+    func showPlaceInfo(
+        title: String,
+        subtitle: String,
+        rating: Double,
+        reviewCount: Int,
+        point: YMKPoint
+    ) {
         let vc = MapLocationInformationSheetController(
             title: title,
             subtitle: subtitle,
             rating: rating,
             reviewCount: reviewCount,
             onAddToFavorites: { [weak self] in
-                self?.displayAlert(text: subtitle)
+                self?.displayAlert(key: title, text: subtitle, point: point)
             },
             onDismiss: { [weak self] in
                 self?.rootView.updateFloatingButtonPosition(offsetFromBottom: 100, animated: true)
@@ -230,12 +240,20 @@ private extension YandexMapsViewController {
         }
     }
     
-    func displayAlert(text: String) {
+    func displayAlert(key: String, text: String, point: YMKPoint) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             let alertVC = AddPlaceCustomAlert(
                 title: "Добавить адрес в избранное", text: text
             ) { editedText in
-                print("User confirmed with: \(editedText)")
+                UserDefaults.standard.appendPoint(
+                    MyPoint(
+                        key: key,
+                        value: text,
+                        latitude: point.latitude,
+                        longitude: point.longitude
+                    ),
+                    forKey: Constants.USER_FAVORITE_KEY
+                )
             }
             alertVC.modalPresentationStyle = .overFullScreen
             alertVC.modalTransitionStyle = .crossDissolve

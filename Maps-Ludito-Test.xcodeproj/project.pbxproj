@@ -12,6 +12,9 @@
 		B60117CD2DCA11CE00E5793C /* YMKGeoObjectCollectionItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117CC2DCA11CE00E5793C /* YMKGeoObjectCollectionItem+Extensions.swift */; };
 		B60117D32DCA37AB00E5793C /* MapLocationInformationSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117D22DCA37AB00E5793C /* MapLocationInformationSheetController.swift */; };
 		B60117D82DCB120F00E5793C /* AddPlaceCustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117D72DCB120F00E5793C /* AddPlaceCustomAlert.swift */; };
+		B60117DC2DCB2FEC00E5793C /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117DB2DCB2FEC00E5793C /* UserDefaults+Extensions.swift */; };
+		B60117DF2DCB361E00E5793C /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117DE2DCB361E00E5793C /* BookmarkTableViewCell.swift */; };
+		B60117E22DCB39FE00E5793C /* MyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117E12DCB39FE00E5793C /* MyPoint.swift */; };
 		B67ADB4C2DC8B7AC002AED83 /* LuditoSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */; };
 		B67ADB4E2DC8BF9F002AED83 /* LuditoFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */; };
 		B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */; };
@@ -40,6 +43,9 @@
 		B60117CC2DCA11CE00E5793C /* YMKGeoObjectCollectionItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YMKGeoObjectCollectionItem+Extensions.swift"; sourceTree = "<group>"; };
 		B60117D22DCA37AB00E5793C /* MapLocationInformationSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationInformationSheetController.swift; sourceTree = "<group>"; };
 		B60117D72DCB120F00E5793C /* AddPlaceCustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCustomAlert.swift; sourceTree = "<group>"; };
+		B60117DB2DCB2FEC00E5793C /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		B60117DE2DCB361E00E5793C /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
+		B60117E12DCB39FE00E5793C /* MyPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPoint.swift; sourceTree = "<group>"; };
 		B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoSearchBar.swift; sourceTree = "<group>"; };
 		B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoFloatingButton.swift; sourceTree = "<group>"; };
 		B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapsView.swift; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 		B60117D92DCB22A300E5793C /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
+				B60117E02DCB39F900E5793C /* Model */,
+				B60117DD2DCB357700E5793C /* Components */,
 				E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */,
 			);
 			path = Bookmark;
@@ -131,6 +139,22 @@
 				E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		B60117DD2DCB357700E5793C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B60117DE2DCB361E00E5793C /* BookmarkTableViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B60117E02DCB39F900E5793C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B60117E12DCB39FE00E5793C /* MyPoint.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B67ADB462DC8B5F6002AED83 /* YandexMaps */ = {
@@ -156,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				B67ADB582DC8E5B5002AED83 /* UIViewController+Extensions.swift */,
+				B60117DB2DCB2FEC00E5793C /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +424,7 @@
 				B60117CD2DCA11CE00E5793C /* YMKGeoObjectCollectionItem+Extensions.swift in Sources */,
 				B60117D82DCB120F00E5793C /* AddPlaceCustomAlert.swift in Sources */,
 				E296E6222DC6808500B6E364 /* AppDelegate.swift in Sources */,
+				B60117DC2DCB2FEC00E5793C /* UserDefaults+Extensions.swift in Sources */,
 				E296E6362DC691FF00B6E364 /* LuditoTabBarTitleView.swift in Sources */,
 				E296E6232DC6808500B6E364 /* SceneDelegate.swift in Sources */,
 				E296E62D2DC6831F00B6E364 /* LuditoCustomTabBar.swift in Sources */,
@@ -409,11 +435,13 @@
 				B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */,
 				B67ADB592DC8E5B5002AED83 /* UIViewController+Extensions.swift in Sources */,
 				E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */,
+				B60117E22DCB39FE00E5793C /* MyPoint.swift in Sources */,
 				B60117BF2DCA069700E5793C /* MapsSearchResultCell.swift in Sources */,
 				B67ADB5D2DC8EA31002AED83 /* MapSearchResultsSheetController.swift in Sources */,
 				E296E6302DC68F6700B6E364 /* BookmarkViewController.swift in Sources */,
 				B60117BC2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift in Sources */,
 				B67ADB532DC8CE95002AED83 /* Constants.swift in Sources */,
+				B60117DF2DCB361E00E5793C /* BookmarkTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
