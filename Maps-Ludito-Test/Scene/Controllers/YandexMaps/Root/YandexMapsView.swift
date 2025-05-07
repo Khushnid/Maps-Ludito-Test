@@ -9,6 +9,8 @@ import UIKit
 import YandexMapsMobile
 
 final class YandexMapsView: UIView {
+    private(set) var floatingButtonBottomConstraint: NSLayoutConstraint!
+    
     lazy var mapView: YMKMapView? = {
         guard let view = YMKMapView(frame: bounds) else { return nil }
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -44,7 +46,7 @@ final class YandexMapsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
+        
         setupMapViewIfPossible()
         setupView()
     }
@@ -63,6 +65,17 @@ final class YandexMapsView: UIView {
     
     func getSearchResult() -> String {
         return searchbar.getSearchResult()
+    }
+    
+    func updateFloatingButtonPosition(offsetFromBottom: CGFloat, animated: Bool) {
+        floatingButtonBottomConstraint.constant = -offsetFromBottom
+        if animated {
+            UIView.animate(withDuration: 0.2) {
+                self.layoutIfNeeded()
+            }
+        } else {
+            layoutIfNeeded()
+        }
     }
 }
 
@@ -86,13 +99,15 @@ private extension YandexMapsView {
         addSubview(searchbar)
         addSubview(floatingButton)
         
+        floatingButtonBottomConstraint = floatingButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100)
+        
         NSLayoutConstraint.activate([
             searchbar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             searchbar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             searchbar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
             floatingButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            floatingButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -64),
+            floatingButtonBottomConstraint
         ])
     }
 }

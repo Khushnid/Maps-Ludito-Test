@@ -9,7 +9,7 @@ import UIKit
 import CoreLocation
 import YandexMapsMobile
 
-final class BottomSheetSearchViewController: UIViewController {
+final class MapSearchResultsSheetController: UIViewController {
     private let searchbar: LuditoSearchBar = {
         let view = LuditoSearchBar()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +90,7 @@ final class BottomSheetSearchViewController: UIViewController {
     }
 }
 
-extension BottomSheetSearchViewController: UITableViewDataSource, UITableViewDelegate {
+extension MapSearchResultsSheetController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         results.count
     }

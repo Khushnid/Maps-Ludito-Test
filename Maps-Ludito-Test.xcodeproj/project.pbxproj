@@ -10,12 +10,13 @@
 		B60117BC2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117BB2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift */; };
 		B60117BF2DCA069700E5793C /* MapsSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117BE2DCA069700E5793C /* MapsSearchResultCell.swift */; };
 		B60117CD2DCA11CE00E5793C /* YMKGeoObjectCollectionItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117CC2DCA11CE00E5793C /* YMKGeoObjectCollectionItem+Extensions.swift */; };
+		B60117D32DCA37AB00E5793C /* MapLocationInformationSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60117D22DCA37AB00E5793C /* MapLocationInformationSheetController.swift */; };
 		B67ADB4C2DC8B7AC002AED83 /* LuditoSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */; };
 		B67ADB4E2DC8BF9F002AED83 /* LuditoFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */; };
 		B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */; };
 		B67ADB532DC8CE95002AED83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB522DC8CE95002AED83 /* Constants.swift */; };
 		B67ADB592DC8E5B5002AED83 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB582DC8E5B5002AED83 /* UIViewController+Extensions.swift */; };
-		B67ADB5D2DC8EA31002AED83 /* BottomSheetSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB5C2DC8EA31002AED83 /* BottomSheetSearchViewController.swift */; };
+		B67ADB5D2DC8EA31002AED83 /* MapSearchResultsSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67ADB5C2DC8EA31002AED83 /* MapSearchResultsSheetController.swift */; };
 		E296E61E2DC6808500B6E364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E296E6152DC6808500B6E364 /* Assets.xcassets */; };
 		E296E6202DC6808500B6E364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E296E6182DC6808500B6E364 /* LaunchScreen.storyboard */; };
 		E296E6212DC6808500B6E364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E296E61A2DC6808500B6E364 /* Main.storyboard */; };
@@ -37,12 +38,13 @@
 		B60117BB2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YandexMapsViewController+SearchDelegate.swift"; sourceTree = "<group>"; };
 		B60117BE2DCA069700E5793C /* MapsSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsSearchResultCell.swift; sourceTree = "<group>"; };
 		B60117CC2DCA11CE00E5793C /* YMKGeoObjectCollectionItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YMKGeoObjectCollectionItem+Extensions.swift"; sourceTree = "<group>"; };
+		B60117D22DCA37AB00E5793C /* MapLocationInformationSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationInformationSheetController.swift; sourceTree = "<group>"; };
 		B67ADB4B2DC8B7AC002AED83 /* LuditoSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoSearchBar.swift; sourceTree = "<group>"; };
 		B67ADB4D2DC8BF9F002AED83 /* LuditoFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoFloatingButton.swift; sourceTree = "<group>"; };
 		B67ADB4F2DC8C801002AED83 /* YandexMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapsView.swift; sourceTree = "<group>"; };
 		B67ADB522DC8CE95002AED83 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B67ADB582DC8E5B5002AED83 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		B67ADB5C2DC8EA31002AED83 /* BottomSheetSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSearchViewController.swift; sourceTree = "<group>"; };
+		B67ADB5C2DC8EA31002AED83 /* MapSearchResultsSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchResultsSheetController.swift; sourceTree = "<group>"; };
 		D8C42FAFC18856FAE523AC28 /* Pods_Maps_Ludito_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps_Ludito_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E296E5FA2DC677AE00B6E364 /* Maps-Ludito-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maps-Ludito-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E296E6142DC6808500B6E364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				B60117BD2DCA05E000E5793C /* Components */,
-				B67ADB5C2DC8EA31002AED83 /* BottomSheetSearchViewController.swift */,
+				B67ADB5C2DC8EA31002AED83 /* MapSearchResultsSheetController.swift */,
+				B60117D22DCA37AB00E5793C /* MapLocationInformationSheetController.swift */,
 			);
 			path = "Location Sheet";
 			sourceTree = "<group>";
@@ -377,12 +380,13 @@
 				E296E6242DC6808500B6E364 /* LuditoCustomTabBarController.swift in Sources */,
 				B67ADB4C2DC8B7AC002AED83 /* LuditoSearchBar.swift in Sources */,
 				B67ADB4E2DC8BF9F002AED83 /* LuditoFloatingButton.swift in Sources */,
+				B60117D32DCA37AB00E5793C /* MapLocationInformationSheetController.swift in Sources */,
 				E296E6342DC68FB400B6E364 /* UserDetailsViewController.swift in Sources */,
 				B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */,
 				B67ADB592DC8E5B5002AED83 /* UIViewController+Extensions.swift in Sources */,
 				E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */,
 				B60117BF2DCA069700E5793C /* MapsSearchResultCell.swift in Sources */,
-				B67ADB5D2DC8EA31002AED83 /* BottomSheetSearchViewController.swift in Sources */,
+				B67ADB5D2DC8EA31002AED83 /* MapSearchResultsSheetController.swift in Sources */,
 				E296E6302DC68F6700B6E364 /* BookmarkViewController.swift in Sources */,
 				B60117BC2DC9BBF200E5793C /* YandexMapsViewController+SearchDelegate.swift in Sources */,
 				B67ADB532DC8CE95002AED83 /* Constants.swift in Sources */,
@@ -428,7 +432,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +463,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

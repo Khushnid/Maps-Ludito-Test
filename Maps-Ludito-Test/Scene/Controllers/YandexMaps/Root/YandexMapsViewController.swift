@@ -9,7 +9,7 @@ import UIKit
 import YandexMapsMobile
 import CoreLocation
 
-final class YandexMapsViewController: UIViewController, YMKMapCameraListener {
+final class YandexMapsViewController: UIViewController, YMKMapCameraListener, YMKMapInputListener {
     private let rootView = YandexMapsView()
     private let locationManager = CLLocationManager()
     private var userLocation: CLLocation?
@@ -33,6 +33,10 @@ final class YandexMapsViewController: UIViewController, YMKMapCameraListener {
         requestLocationPermission()
     }
     
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+      
+    }
+    
     func onCameraPositionChanged(
         with map: YMKMap,
         cameraPosition: YMKCameraPosition,
@@ -49,6 +53,42 @@ final class YandexMapsViewController: UIViewController, YMKMapCameraListener {
             }
         }
     }
+    
+    func onMapLongTap(with map: YMKMap, point: YMKPoint) {
+        onMapTap(with: map, point: point)
+    }
+    
+    func onMapTap(with map: YMKMap, point: YMKPoint) {
+        guard let searchManager = searchManager else {
+            showPlaceInfo(title: "Search Manager not initialized", subtitle: "", rating: 0, reviewCount: 0)
+            return
+        }
+        searchSession = searchManager.submit(
+            withText: "",
+            geometry: YMKGeometry(point: point),
+            searchOptions: YMKSearchOptions(),
+            responseHandler: { [weak self] response, error in
+                guard let self else { return }
+                
+                if let error {
+                    self.showPlaceInfo(title: "Error", subtitle: error.localizedDescription, rating: 0.0, reviewCount: 0)
+                    return
+                }
+                
+                guard let response, let firstResult = response.collection.children.first else {
+                    self.showPlaceInfo(title: "No results found", subtitle: "No description available", rating: 0.0, reviewCount: 0)
+                    return
+                }
+                
+                self.showPlaceInfo(
+                    title: firstResult.title,
+                    subtitle: firstResult.subtitle,
+                    rating: 4.5,
+                    reviewCount: 123
+                )
+            }
+        )
+    }
 }
 
 private extension YandexMapsViewController {
@@ -56,6 +96,7 @@ private extension YandexMapsViewController {
         rootView.setupSearchDelegate(delegate: homeSearchDelegateHandler)
         rootView.setupFloatingButtonDelegate(delegate: self)
         rootView.mapView?.mapWindow.map.addCameraListener(with: self)
+        rootView.mapView?.mapWindow.map.addInputListener(with: self)
     }
     
     func setupSearch() {
@@ -133,7 +174,7 @@ private extension YandexMapsViewController {
             longitude: userLocation.coordinate.longitude
         )
         
-        let vc = BottomSheetSearchViewController(
+        let vc = MapSearchResultsSheetController(
             results: results,
             searchResult: rootView.getSearchResult(),
             userLocation: userPoint
@@ -150,6 +191,37 @@ private extension YandexMapsViewController {
         }
 
         present(vc, animated: true)
+    }
+    
+    func showPlaceInfo(title: String, subtitle: String, rating: Double, reviewCount: Int) {
+        let vc = MapLocationInformationSheetController(
+            title: title,
+            subtitle: subtitle,
+            rating: rating,
+            reviewCount: reviewCount,
+            onAddToFavorites: {
+                print("Added to favorites")
+            },
+            onDismiss: { [weak self] in
+                self?.rootView.updateFloatingButtonPosition(offsetFromBottom: 100, animated: true)
+            }
+        )
+
+        vc.presentationController?.delegate = self
+        
+        present(vc, animated: true) {
+            if let presentedVC = self.presentedViewController {
+                let vcHeight = presentedVC.view.frame.height
+                self.rootView.updateFloatingButtonPosition(offsetFromBottom: vcHeight + 10, animated: true)
+            }
+        }
+    }
+}
+
+extension YandexMapsViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        guard presentationController.presentedViewController is MapLocationInformationSheetController else { return }
+        rootView.updateFloatingButtonPosition(offsetFromBottom: 100, animated: true)
     }
 }
 
