@@ -63,7 +63,12 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let dataSource = dataSource[indexPath.row]
+     
+        showAlert(
+            message: "Широта: \(dataSource.latitude)\n Долгота: \(dataSource.longitude)",
+            title: "Mестоположении:"
+        )
     }
 }
 

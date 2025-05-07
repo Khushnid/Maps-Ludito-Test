@@ -74,7 +74,7 @@ final class YandexMapsViewController: UIViewController, YMKMapCameraListener, YM
                 guard let self else { return }
                 
                 if let error {
-                    showErrorAlert(message: error.localizedDescription)
+                    showAlert(message: error.localizedDescription)
                     return
                 }
                 
@@ -146,7 +146,7 @@ private extension YandexMapsViewController {
     
     func handleSearchResponse(_ response: YMKSearchResponse?, error: Error?) {
         if let error {
-            showErrorAlert(message: error.localizedDescription)
+            showAlert(message: error.localizedDescription)
             return
         }
         
@@ -272,7 +272,7 @@ extension YandexMapsViewController: UIAdaptivePresentationControllerDelegate {
 extension YandexMapsViewController: LuditoFloatingButtonDelegate {
     func floatingButtonClicked() {
         guard let userLocation else {
-            showErrorAlert(message: "Местоположение пользователя недоступно.")
+            showAlert(message: "Местоположение пользователя недоступно.")
             return
         }
 
@@ -292,7 +292,7 @@ extension YandexMapsViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        showErrorAlert(message: "Не удалось определить местоположение. Пожалуйста, попробуйте позже")
+        showAlert(message: "Не удалось определить местоположение. Пожалуйста, попробуйте позже")
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
