@@ -17,7 +17,7 @@ final class YandexMapsView: UIView {
         return view
     }()
     
-    private let searchbar: LuditoSearchBar = {
+    let searchbar: LuditoSearchBar = {
         let view = LuditoSearchBar()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

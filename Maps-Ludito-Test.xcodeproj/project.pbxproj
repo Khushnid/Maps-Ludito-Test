@@ -27,7 +27,6 @@
 		E296E62D2DC6831F00B6E364 /* LuditoCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E62C2DC6831F00B6E364 /* LuditoCustomTabBar.swift */; };
 		E296E6302DC68F6700B6E364 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */; };
 		E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */; };
-		E296E6342DC68FB400B6E364 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6332DC68FB400B6E364 /* UserDetailsViewController.swift */; };
 		E296E6362DC691FF00B6E364 /* LuditoTabBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */; };
 		E296E63A2DC6998D00B6E364 /* Roboto-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E296E6392DC6998D00B6E364 /* Roboto-SemiBold.ttf */; };
 		E296E63B2DC6998D00B6E364 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E296E6382DC6998D00B6E364 /* Roboto-Bold.ttf */; };
@@ -59,7 +58,6 @@
 		E296E62C2DC6831F00B6E364 /* LuditoCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoCustomTabBar.swift; sourceTree = "<group>"; };
 		E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		E296E6312DC68F9300B6E364 /* YandexMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapsViewController.swift; sourceTree = "<group>"; };
-		E296E6332DC68FB400B6E364 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		E296E6352DC691FF00B6E364 /* LuditoTabBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuditoTabBarTitleView.swift; sourceTree = "<group>"; };
 		E296E6382DC6998D00B6E364 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		E296E6392DC6998D00B6E364 /* Roboto-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -117,6 +115,22 @@
 				B60117D72DCB120F00E5793C /* AddPlaceCustomAlert.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		B60117D92DCB22A300E5793C /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		B60117DA2DCB22B800E5793C /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		B67ADB462DC8B5F6002AED83 /* YandexMaps */ = {
@@ -208,10 +222,9 @@
 		E296E6252DC6808D00B6E364 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B60117DA2DCB22B800E5793C /* Tabbar */,
+				B60117D92DCB22A300E5793C /* Bookmark */,
 				B67ADB462DC8B5F6002AED83 /* YandexMaps */,
-				E296E61C2DC6808500B6E364 /* LuditoCustomTabBarController.swift */,
-				E296E62F2DC68F6700B6E364 /* BookmarkViewController.swift */,
-				E296E6332DC68FB400B6E364 /* UserDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -393,7 +406,6 @@
 				B67ADB4C2DC8B7AC002AED83 /* LuditoSearchBar.swift in Sources */,
 				B67ADB4E2DC8BF9F002AED83 /* LuditoFloatingButton.swift in Sources */,
 				B60117D32DCA37AB00E5793C /* MapLocationInformationSheetController.swift in Sources */,
-				E296E6342DC68FB400B6E364 /* UserDetailsViewController.swift in Sources */,
 				B67ADB502DC8C801002AED83 /* YandexMapsView.swift in Sources */,
 				B67ADB592DC8E5B5002AED83 /* UIViewController+Extensions.swift in Sources */,
 				E296E6322DC68F9300B6E364 /* YandexMapsViewController.swift in Sources */,

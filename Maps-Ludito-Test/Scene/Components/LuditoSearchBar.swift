@@ -22,7 +22,7 @@ class LuditoSearchBar: UIView, UITextFieldDelegate {
         return imageView
     }()
 
-    private let textField: UITextField = {
+    let textField: UITextField = {
         let field = UITextField()
         field.translatesAutoresizingMaskIntoConstraints = false
         field.attributedPlaceholder = NSAttributedString(

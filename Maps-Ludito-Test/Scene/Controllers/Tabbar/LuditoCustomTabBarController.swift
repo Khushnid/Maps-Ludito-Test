@@ -41,10 +41,13 @@ private extension LuditoCustomTabBarController {
     }
 
     func setupViewControllers() {
+        let userDetailsVC = UIViewController()
+        userDetailsVC.view.backgroundColor = UIColor(named: "background_main")
+        
         viewControllers = [
             BookmarkViewController(),
             YandexMapsViewController(),
-            UserDetailsViewController()
+            userDetailsVC
         ]
     }
 }

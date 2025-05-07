@@ -126,7 +126,7 @@ final class MapLocationInformationSheetController: UIViewController {
         NSLayoutConstraint.activate([
             contentStack.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             contentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            contentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            contentStack.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -4),
             
             closeButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),

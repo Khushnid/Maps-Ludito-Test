@@ -59,6 +59,7 @@ final class YandexMapsViewController: UIViewController, YMKMapCameraListener, YM
             showPlaceInfo(title: "Search Manager not initialized", subtitle: "", rating: 0, reviewCount: 0)
             return
         }
+      
         searchSession = searchManager.submit(
             withText: "",
             geometry: YMKGeometry(point: point),
@@ -93,10 +94,26 @@ private extension YandexMapsViewController {
         rootView.setupFloatingButtonDelegate(delegate: self)
         rootView.mapView?.mapWindow.map.addCameraListener(with: self)
         rootView.mapView?.mapWindow.map.addInputListener(with: self)
+        addDoneButtonOnKeyboard()
     }
     
     func setupSearch() {
         searchManager = YMKSearchFactory.instance().createSearchManager(with: YMKSearchManagerType.combined)
+    }
+    
+    private func addDoneButtonOnKeyboard() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
+        
+        toolbar.items = [flexSpace, doneButton]
+        rootView.searchbar.textField.inputAccessoryView = toolbar
+    }
+
+    @objc private func doneButtonTapped() {
+        rootView.searchbar.textField.resignFirstResponder()
     }
     
     func requestLocationPermission() {
