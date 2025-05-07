@@ -33,10 +33,6 @@ final class YandexMapsViewController: UIViewController, YMKMapCameraListener, YM
         requestLocationPermission()
     }
     
-    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
-      
-    }
-    
     func onCameraPositionChanged(
         with map: YMKMap,
         cameraPosition: YMKCameraPosition,
@@ -199,8 +195,8 @@ private extension YandexMapsViewController {
             subtitle: subtitle,
             rating: rating,
             reviewCount: reviewCount,
-            onAddToFavorites: {
-                print("Added to favorites")
+            onAddToFavorites: { [weak self] in
+                self?.displayAlert(text: subtitle)
             },
             onDismiss: { [weak self] in
                 self?.rootView.updateFloatingButtonPosition(offsetFromBottom: 100, animated: true)
@@ -214,6 +210,19 @@ private extension YandexMapsViewController {
                 let vcHeight = presentedVC.view.frame.height
                 self.rootView.updateFloatingButtonPosition(offsetFromBottom: vcHeight + 10, animated: true)
             }
+        }
+    }
+    
+    func displayAlert(text: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            let alertVC = AddPlaceCustomAlert(
+                title: "Добавить адрес в избранное", text: text
+            ) { editedText in
+                print("User confirmed with: \(editedText)")
+            }
+            alertVC.modalPresentationStyle = .overFullScreen
+            alertVC.modalTransitionStyle = .crossDissolve
+            self.present(alertVC, animated: true, completion: nil)
         }
     }
 }

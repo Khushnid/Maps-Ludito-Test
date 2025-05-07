@@ -10,7 +10,6 @@ import UIKit
 final class UserDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .blue
+        view.backgroundColor = UIColor(named: "background_main")
     }
 }
